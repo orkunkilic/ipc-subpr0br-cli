@@ -1,0 +1,19 @@
+{
+  "name": "subpr0br-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "subpr0br": "./bin/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@spheron/compute": "^1.0.1",
+    "yargs": "^17.7.2"
+  }
+}
