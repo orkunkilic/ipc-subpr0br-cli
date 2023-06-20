@@ -26,13 +26,6 @@ const main = async () => {
       const organization = await client.organization.get();
       console.log("Organization: " + JSON.stringify(organization));
 
-      /* const computeMachines = await client.computeMachine.get({
-        skip: 0,
-        limit: 10,
-        search: "2Gi"
-      });
-      console.log("Compute Machines: " + JSON.stringify(computeMachines)); */
-
       const instanceResponse = await client.instance.create({
         clusterName: "ipc-explorer",
         configuration: {
@@ -63,7 +56,7 @@ const main = async () => {
       const deployment = await client.instance.getInstanceDeployment(instanceResponse.instanceDeploymentId);
       console.log("Deployment: " + JSON.stringify(deployment));
 
-      /* const domain = await client.instance.addDomain(instanceResponse.instanceId, {
+      const domain = await client.instance.addDomain(instanceResponse.instanceId, {
         name: argv.domain,
         type: DomainTypeEnum.DOMAIN,
         link: deployment.connectionUrls[0]
@@ -71,7 +64,7 @@ const main = async () => {
       console.log("Domain: " + JSON.stringify(domain));
 
       const domainVerification = await client.instance.verifyDomain(instanceResponse.instanceId, domain.id);
-      console.log("Domain Verification: " + JSON.stringify(domainVerification)); */
+      console.log("Domain Verification: " + JSON.stringify(domainVerification));
 
   } catch (e) {
       console.log("Error: " + e);
